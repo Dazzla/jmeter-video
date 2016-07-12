@@ -1,5 +1,3 @@
-/lib/
-
 /docs/
 
 /backups/
@@ -13,8 +11,5 @@
 /README
 
 /user/auth.txt
-
-/bin/
-/extras/
 
 /user/jmeter.log
