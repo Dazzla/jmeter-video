@@ -13,3 +13,5 @@
 /user/auth.txt
 
 /user/jmeter.log
+
+user/secrets.csv

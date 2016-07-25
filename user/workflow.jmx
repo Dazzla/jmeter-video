@@ -11,6 +11,29 @@
       <stringProp name="TestPlan.user_define_classpath"></stringProp>
     </TestPlan>
     <hashTree>
+      <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+        <collectionProp name="AuthManager.auth_list">
+          <elementProp name="" elementType="Authorization">
+            <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
+            <stringProp name="Authorization.username">$uname</stringProp>
+            <stringProp name="Authorization.password">m4st3rus3r</stringProp>
+            <stringProp name="Authorization.domain"></stringProp>
+            <stringProp name="Authorization.realm"></stringProp>
+          </elementProp>
+        </collectionProp>
+      </AuthManager>
+      <hashTree/>
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+        <stringProp name="delimiter">,</stringProp>
+        <stringProp name="fileEncoding"></stringProp>
+        <stringProp name="filename">./secrets.csv</stringProp>
+        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="recycle">true</boolProp>
+        <stringProp name="shareMode">shareMode.all</stringProp>
+        <boolProp name="stopThread">false</boolProp>
+        <stringProp name="variableNames"></stringProp>
+      </CSVDataSet>
+      <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="End-To-End" enabled="true">
         <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
         <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
@@ -34,7 +57,7 @@
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Create Ingestion" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Create Ingestion" enabled="false">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -42,7 +65,7 @@
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Verify Ingested" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Verify Ingested" enabled="false">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -50,7 +73,7 @@
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Publish" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Publish" enabled="false">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
@@ -58,13 +81,47 @@
           </collectionProp>
         </ModuleController>
         <hashTree/>
-        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Verify Published" enabled="true">
+        <ModuleController guiclass="ModuleControllerGui" testclass="ModuleController" testname="Verify Published" enabled="false">
           <collectionProp name="ModuleController.node_path">
             <stringProp name="-1227702913">WorkBench</stringProp>
             <stringProp name="764597751">Test Plan</stringProp>
             <stringProp name="1792618247">Verify Published</stringProp>
           </collectionProp>
         </ModuleController>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="End-end Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
         <hashTree/>
       </hashTree>
       <TestFragmentController guiclass="TestFragmentControllerGui" testclass="TestFragmentController" testname="Create Project" enabled="true"/>
@@ -78,12 +135,22 @@
             </elementProp>
             <elementProp name="name_origin_identifier" elementType="Argument">
               <stringProp name="Argument.name">name_origin_identifier</stringProp>
-              <stringProp name="Argument.value">JMETER</stringProp>
+              <stringProp name="Argument.value">JMETEr</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="host" elementType="Argument">
               <stringProp name="Argument.name">host</stringProp>
               <stringProp name="Argument.value">master.dev.nativ-systems.com</stringProp>
+              <stringProp name="Argument.metadata">=</stringProp>
+            </elementProp>
+          </collectionProp>
+        </Arguments>
+        <hashTree/>
+        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Project Workflow Variables" enabled="true">
+          <collectionProp name="Arguments.arguments">
+            <elementProp name="random_project_name" elementType="Argument">
+              <stringProp name="Argument.name">random_project_name</stringProp>
+              <stringProp name="Argument.value">${name_origin_identifier}_${random_name_seed}</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
           </collectionProp>
@@ -99,27 +166,14 @@ log.info(PRJ);
 log.info(&quot;*******************&quot;)</stringProp>
         </BeanShellListener>
         <hashTree/>
-        <Arguments guiclass="ArgumentsPanel" testclass="Arguments" testname="Project Workflow Variables" enabled="true">
-          <collectionProp name="Arguments.arguments">
-            <elementProp name="random_project_name" elementType="Argument">
-              <stringProp name="Argument.name">random_project_name</stringProp>
-              <stringProp name="Argument.value">${name_origin_identifier}_${random_name_seed}</stringProp>
-              <stringProp name="Argument.metadata">=</stringProp>
-            </elementProp>
-          </collectionProp>
-        </Arguments>
-        <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Create Project" enabled="true">
           <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
           <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
             <collectionProp name="Arguments.arguments">
               <elementProp name="" elementType="HTTPArgument">
                 <boolProp name="HTTPArgument.always_encode">false</boolProp>
-                <stringProp name="Argument.value">{&#xd;
-	&quot;definitionId&quot;: 12387,&#xd;
-	&quot;stringVariables&quot;: {&quot;projectMetadata&quot;:&quot;{\&quot;project\&quot;: \&quot;${random_project_name}\&quot;, \&quot;section\&quot;: \&quot;&lt;section&gt;\&quot;, \&quot;brand\&quot;: \&quot;http://api.ft.com/things/d4991c65-5e03-471c-bbba-fdb20d9d1009\&quot;}&quot;&#xd;
-	}&#xd;
-}</stringProp>
+                <stringProp name="Argument.value">&#xd;
+{&quot;definitionId&quot;: 31061,&quot;stringVariables&quot;: {&quot;projectMetadata&quot;: &quot;{ \&quot;project\&quot;: \&quot;${random_project_name}\&quot;, \&quot;section\&quot;: \&quot;http://api.ft.com/things/12bcffe1-f9f1-47ce-a3aa-e2dcdfaf7499\&quot;, \&quot;brand\&quot;: \&quot;http://api.ft.com/things/d4991c65-5e03-471c-bbba-fdb20d9d1009\&quot;, \&quot;thing-url\&quot;: \&quot;http://api.ft.com/things/JAMESISADICKb0778312-7686-49bc-a720-0551709ad37b\&quot;}&quot;}}</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
             </collectionProp>
@@ -264,12 +318,20 @@ log.info(projectURL)</stringProp>
             <boolProp name="resetInterpreter">false</boolProp>
             <stringProp name="script">Boolean isRunning;
 String projectStatus = vars.get(&quot;STATUS&quot;);
+String user = vars.get(&quot;username&quot;);
+String pwd = vars.get(&quot;passwd&quot;);
 
 if(projectID == &quot;Running&quot;) {
     isRunning = true;
 } else {
     isRunning = false;
 }
+
+log.info(&quot;*******username:&quot;);
+log.info(user);
+
+log.info(&quot;*******passwd:&quot;);
+log.info(pwd);
 
 log.info(&quot;****Project CREATE STATUS&quot;);
 log.info(projectStatus);
@@ -280,7 +342,7 @@ log.info(String.valueOf(isRunning));</stringProp>
           <hashTree/>
         </hashTree>
         <ConstantTimer guiclass="ConstantTimerGui" testclass="ConstantTimer" testname="Constant Timer" enabled="true">
-          <stringProp name="ConstantTimer.delay">5000</stringProp>
+          <stringProp name="ConstantTimer.delay">10000</stringProp>
         </ConstantTimer>
         <hashTree/>
         <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="Wait For Project Complete" enabled="true">
@@ -378,18 +440,6 @@ log.info(String.valueOf(isRunning));</stringProp>
           </objProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
-        <hashTree/>
-        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
-          <collectionProp name="AuthManager.auth_list">
-            <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-              <stringProp name="Authorization.username">masteruser</stringProp>
-              <stringProp name="Authorization.password">m4st3rus3r</stringProp>
-              <stringProp name="Authorization.domain"></stringProp>
-              <stringProp name="Authorization.realm"></stringProp>
-            </elementProp>
-          </collectionProp>
-        </AuthManager>
         <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
           <collectionProp name="HeaderManager.headers">
@@ -689,18 +739,6 @@ log.info(&quot;***COMPLETED CREATE&quot;)</stringProp>
           <stringProp name="filename"></stringProp>
         </ResultCollector>
         <hashTree/>
-        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
-          <collectionProp name="AuthManager.auth_list">
-            <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-              <stringProp name="Authorization.username">masteruser</stringProp>
-              <stringProp name="Authorization.password">m4st3rus3r</stringProp>
-              <stringProp name="Authorization.domain"></stringProp>
-              <stringProp name="Authorization.realm"></stringProp>
-            </elementProp>
-          </collectionProp>
-        </AuthManager>
-        <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
@@ -837,18 +875,6 @@ log.info(&quot;************************************&quot;);
           <stringProp name="Assertion.scope">all</stringProp>
         </ResponseAssertion>
         <hashTree/>
-        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
-          <collectionProp name="AuthManager.auth_list">
-            <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-              <stringProp name="Authorization.username">masteruser</stringProp>
-              <stringProp name="Authorization.password">m4st3rus3r</stringProp>
-              <stringProp name="Authorization.domain"></stringProp>
-              <stringProp name="Authorization.realm"></stringProp>
-            </elementProp>
-          </collectionProp>
-        </AuthManager>
-        <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
@@ -969,18 +995,6 @@ log.info(publishURL)</stringProp>
           </BeanShellListener>
           <hashTree/>
         </hashTree>
-        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
-          <collectionProp name="AuthManager.auth_list">
-            <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-              <stringProp name="Authorization.username">masteruser</stringProp>
-              <stringProp name="Authorization.password">m4st3rus3r</stringProp>
-              <stringProp name="Authorization.domain"></stringProp>
-              <stringProp name="Authorization.realm"></stringProp>
-            </elementProp>
-          </collectionProp>
-        </AuthManager>
-        <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
