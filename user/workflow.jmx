@@ -16,7 +16,7 @@
           <elementProp name="" elementType="Authorization">
             <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
             <stringProp name="Authorization.username">$uname</stringProp>
-            <stringProp name="Authorization.password">m4st3rus3r</stringProp>
+            <stringProp name="Authorization.password">${passwd}</stringProp>
             <stringProp name="Authorization.domain"></stringProp>
             <stringProp name="Authorization.realm"></stringProp>
           </elementProp>
@@ -27,11 +27,11 @@
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="filename">./secrets.csv</stringProp>
-        <boolProp name="quotedData">false</boolProp>
+        <boolProp name="quotedData">true</boolProp>
         <boolProp name="recycle">true</boolProp>
         <stringProp name="shareMode">shareMode.all</stringProp>
         <boolProp name="stopThread">false</boolProp>
-        <stringProp name="variableNames"></stringProp>
+        <stringProp name="variableNames">username,passwd</stringProp>
       </CSVDataSet>
       <hashTree/>
       <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="End-To-End" enabled="true">
@@ -135,7 +135,7 @@
             </elementProp>
             <elementProp name="name_origin_identifier" elementType="Argument">
               <stringProp name="Argument.name">name_origin_identifier</stringProp>
-              <stringProp name="Argument.value">JMETEr</stringProp>
+              <stringProp name="Argument.value">JMETER</stringProp>
               <stringProp name="Argument.metadata">=</stringProp>
             </elementProp>
             <elementProp name="host" elementType="Argument">
@@ -1096,18 +1096,6 @@ log.info(&quot;************************************&quot;);
           </ResponseAssertion>
           <hashTree/>
         </hashTree>
-        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
-          <collectionProp name="AuthManager.auth_list">
-            <elementProp name="" elementType="Authorization">
-              <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-              <stringProp name="Authorization.username">masteruser</stringProp>
-              <stringProp name="Authorization.password">m4st3rus3r</stringProp>
-              <stringProp name="Authorization.domain"></stringProp>
-              <stringProp name="Authorization.realm"></stringProp>
-            </elementProp>
-          </collectionProp>
-        </AuthManager>
-        <hashTree/>
         <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="Headers" enabled="true">
           <collectionProp name="HeaderManager.headers">
             <elementProp name="" elementType="Header">
