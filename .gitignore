@@ -15,3 +15,8 @@
 /user/jmeter.log
 
 user/secrets.csv
+
+/bin/.DS_Store
+/.DS_Store
+
+.DS_Store

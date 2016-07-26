@@ -15,15 +15,15 @@
         <collectionProp name="AuthManager.auth_list">
           <elementProp name="" elementType="Authorization">
             <stringProp name="Authorization.url">https://master.dev.nativ-systems.com/api/workflows</stringProp>
-            <stringProp name="Authorization.username">$uname</stringProp>
-            <stringProp name="Authorization.password">${passwd}</stringProp>
+            <stringProp name="Authorization.username">__property(MIO_WS_USERNAME)</stringProp>
+            <stringProp name="Authorization.password">__property(MIO_WS_PASSWORD)</stringProp>
             <stringProp name="Authorization.domain"></stringProp>
             <stringProp name="Authorization.realm"></stringProp>
           </elementProp>
         </collectionProp>
       </AuthManager>
       <hashTree/>
-      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="true">
+      <CSVDataSet guiclass="TestBeanGUI" testclass="CSVDataSet" testname="CSV Data Set Config" enabled="false">
         <stringProp name="delimiter">,</stringProp>
         <stringProp name="fileEncoding"></stringProp>
         <stringProp name="filename">./secrets.csv</stringProp>
