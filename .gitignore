@@ -20,3 +20,7 @@ user/secrets.csv
 /.DS_Store
 
 .DS_Store
+
+user/samples.log
+
+user/summary.log
